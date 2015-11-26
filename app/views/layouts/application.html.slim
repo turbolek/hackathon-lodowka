@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title hackathon-lodowka
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+
+    = render 'layouts/navbar'
+
+    = flash[:error]
+
+    - if notice
+      .notice
+        = notice
+    - if alert
+      .alert
+        = alert
+
+    = yield

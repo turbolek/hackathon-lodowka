@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'slim'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'devise'
 
 
 group :development, :test do
@@ -40,7 +41,6 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
-  gem 'devise'
 end
 
 group :development do

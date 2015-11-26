@@ -5,14 +5,14 @@ describe 'Unauthorized' do
   it 'shows login and signup links for unauthorized user' do
     visit '/'
 
-    expect(page).to have_content('Sign In')
-    expect(page).to have_content('Sign Up')
+    expect(page).to have_content('Login')
+    expect(page).to have_content('Sign up')
   end
 
-  it 'redirects to sign up page' do
+  it 'redirects to Sign up page' do
     visit '/'
 
-    click_link_or_button('Sign Up')
+    click_link_or_button('Sign up')
 
     expect(page).to have_content('Create new account')
   end
@@ -20,7 +20,7 @@ describe 'Unauthorized' do
   it 'redirects to sign in page' do
     visit '/'
 
-    click_link_or_button('Sign In')
+    click_link_or_button('Login')
 
     expect(page).to have_content('Sign in to your account')
   end
@@ -36,11 +36,11 @@ describe 'Authorized' do
 
   end
 
-  it 'doesnt show sign in and sign up links' do
+  it 'doesnt show sign in and Sign up links' do
     visit '/'
 
-    expect(page).not_to have_content('Sign In')
-    expect(page).not_to have_content('Sign Up')
+    expect(page).not_to have_content('Login')
+    expect(page).not_to have_content('Sign up')
   end
 
   it 'Shows signed in users email' do

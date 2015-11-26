@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 1.9.3
+  - jruby-18mode # JRuby in 1.8 mode
+  - jruby-19mode # JRuby in 1.9 mode
+  - rbx-2.1.1
+  - 1.8.7
+  - ree
+
+deploy:
+  provider: heroku
+  api_key: 5718b9a8-c555-4bd5-9c28-5ac3cd497e03
+    secure: "DnJYDKc6WrN+fIg/+HDUepqMQyzpzcj21x8cZfwOVGa00SJj7NIMcuvjdUigtHPGJdlAgPS4vbbc2uMccT+UJvvoylXRl2iOq+5dHYYaT0tTz0u8Zrb2Mc0UGgLo+F+vcfVECYJnFkKVLBdeBVJHKxcH4Kq9EEwbnhphfBOrsxAo0W0ral4JPHZm4ex4j44dNVC19nB2fEgpSf7l/dV5GDphhWJaW0vyp5hRbZTQJZu1Eo/pUsDzfy8HbU/vrKq2sjuqlm32E/yEWCo+lNPTq/O6VwiTk6OGPDXVGVzW3vmf1n6pbV9dQ7lKsZmQdyPr2B0KDSYx698WVBrrGhCjT/J51qfRnERIT7DWOs/3yQitH6zrBF9NmCeg0t5D9rhsyATptuKwrPCe0F+d1U5FLKtsmLNpemf2PNzRpVR60RsG1472F1HSd84pxa0q48r9sCIGzzmI+Y5mdWrXlj9mKXkllnMYIZiztD9e3ZXkRyyR/xd6+XdosY86sy6Akv/D9gLWtIdIAF3kToGdPxQplDvd+BfdEej18sCfHg7FNJRhnpuSFn2Vi6f0QmzxPe9q/X0rrlm4AIsXeRbsCb1ERSOm0ATTW2X4mMXIgxGbpKw42bpHJZhzy+sfgAZIUnfZ8vWQBgtnmo+Fz8hieWmwakBZmeVlwaayEj/0ShDSC0s="
+  app: hackathon-lodowka

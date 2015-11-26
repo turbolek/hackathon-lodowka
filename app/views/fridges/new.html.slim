@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-xs-8.col-xs-offset-2
+      h1 Create fridge
+      = form_for @fridge do |f|
+        - if @fridge.errors.any?
+          - @fridge.errors.full_messages.each do |message|
+            p = message
+
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: 'form-control'
+
+        .form-group
+          = f.submit 'Create Fridge', class: 'btn btn-default'

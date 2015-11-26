@@ -1,52 +1,55 @@
 require 'rails_helper'
 
-describe 'Unauthorized' do
+RSpec.describe 'landing page' do
 
-  it 'shows login and signup links for unauthorized user' do
-    visit '/'
+  describe 'Unauthorized' do
 
-    expect(page).to have_content('Login')
-    expect(page).to have_content('Sign up')
-  end
+    it 'shows login and signup links for unauthorized user' do
+      visit '/'
 
-  it 'redirects to Sign up page' do
-    visit '/'
+      expect(page).to have_content('Login')
+      expect(page).to have_content('Sign up')
+    end
 
-    click_link_or_button('Sign up')
+    it 'redirects to Sign up page' do
+      visit '/'
 
-    expect(page).to have_content('Create new account')
-  end
+      click_link_or_button('Sign up')
 
-  it 'redirects to sign in page' do
-    visit '/'
+      expect(page).to have_content('Sign up')
+    end
 
-    click_link_or_button('Login')
+    it 'redirects to sign in page' do
+      visit '/'
 
-    expect(page).to have_content('Sign in to your account')
-  end
+      click_link_or_button('Login')
 
-end
-
-describe 'Authorized' do
-  fixtures :users
-
-  before(:all) do
-    @user = User.find_by_email('user1@test.test')
-    login_as @user
+      expect(page).to have_content('Login')
+    end
 
   end
 
-  it 'doesnt show sign in and Sign up links' do
-    visit '/'
+  describe 'Authorized' do
+    fixtures :users
 
-    expect(page).not_to have_content('Login')
-    expect(page).not_to have_content('Sign up')
+    before(:each) do
+      @user = User.find_by_email('user1@test.test')
+      login_as @user, scope: :user
+
+    end
+
+    it 'doesnt show sign in and Sign up links' do
+      visit '/'
+
+      expect(page).not_to have_content('Login')
+      expect(page).not_to have_content('Sign up')
+    end
+
+    it 'Shows signed in users email' do
+      visit '/'
+
+      expect(page).to have_content('user1@test.test')
+    end
+
   end
-
-  it 'Shows signed in users email' do
-    visit '/'
-
-    expect(page).to have_content('user1@test.test')
-  end
-
 end

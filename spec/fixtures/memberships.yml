@@ -1,6 +1,6 @@
-gmembership1:
+membership1:
   user_id: 1
   fridge_id: 1
-membership1:
+membership2:
   user_id: 1
   fridge_id: 2

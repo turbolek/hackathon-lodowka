@@ -2,3 +2,7 @@ Supply100:
   id: 100
   product_id: 1
   fridge_id: 2
+Supply99:
+  id: 99
+  product_id: 2
+  fridge_id: 1

@@ -8,6 +8,11 @@ class SuppliesController < ApplicationController
      end
   end
 
+  def destroy
+    Supply.find(params[:supply_id]).destroy
+    redirect_to(fridge_path(params[:fridge_id]))
+  end
+
   private
 
   def supply_params

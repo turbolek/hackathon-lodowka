@@ -24,6 +24,12 @@ class FridgesController < ApplicationController
 
   end
 
+  def add_fridge
+    @fridge = Fridge.find(params[:fridge_id])
+    @fridge.users << current_user
+    redirect_to fridges_path
+  end
+
   private
 
   def fridge_params

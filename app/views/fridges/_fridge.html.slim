@@ -1,4 +1,7 @@
 h4 = link_to fridge.name, fridge_path(fridge.id)
-
-- if user_signed_in? && @given_product
-  =link_to 'Choose fridge', supplies_add_to_fridge_path(fridge_id: fridge.id, product_id: @given_product.id), method: :post, class: 'btn btn-success'
+- if user_signed_in?
+  - unless fridge.users.find_by(id: current_user.id)
+    = link_to 'Join fridge', join_fridge_path(fridge_id: fridge.id), method: :post, class: 'btn btn-primary'  
+  - if @given_product
+    =link_to 'Choose fridge', supplies_add_to_fridge_path(fridge_id: fridge.id, product_id: @given_product.id), method: :post, class: 'btn btn-success'
+	

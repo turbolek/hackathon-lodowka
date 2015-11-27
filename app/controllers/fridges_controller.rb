@@ -31,6 +31,7 @@ class FridgesController < ApplicationController
     redirect_to fridges_path
   end
 
+
   private
 
   def fridge_params

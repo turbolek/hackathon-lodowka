@@ -1,6 +1,6 @@
+gmembership1:
+  user_id: 1
+  fridge_id: 1
 membership1:
-  user_id: user1.id
-  fridge_id: fridge1.id
-membership1:
-  user_id: user1.id
-  fridge_id: fridge2.id 
+  user_id: 1
+  fridge_id: 2

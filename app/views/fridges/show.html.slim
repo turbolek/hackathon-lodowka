@@ -6,17 +6,18 @@
           h3 = @fridge.name
         .panel-body
           .col-xs-9
-            h4 Supplies
             - if user_signed_in?
-              - unless @fridge.users.find_by(id: current_user.id)
-                = link_to 'Join fridge', join_fridge_path(fridge_id: @fridge.id), method: :post, class: 'btn btn-primary'
-              - if @supplies.empty?
-                p.text-muted Empty list
+              - if @fridge.users.find_by(id: current_user.id)
+                h4 Supplies
+                - if @supplies.empty?
+                  p.text-muted Empty list
+                - else
+                ul
+                  - @supplies.each do |supply|
+                    li
+                      = supply.product.name
+                      = link_to 'Remove', remove_supply_path(supply_id: supply.id, fridge_id: @fridge.id), method: :post, class: 'btn btn-danger'
               - else
-              ul
-                - @supplies.each do |supply|
-                  li
-                    = supply.product.name
+                = link_to 'Join fridge', join_fridge_path(fridge_id: @fridge.id), method: :post, class: 'btn btn-primary'
             - else
-                p Sign in to see fridge content
-
+              p Sign in to see fridge content

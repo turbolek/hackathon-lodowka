@@ -6,6 +6,7 @@ User.create(email: 'user2@.test.test', password: 12345678, password_confirmation
 User.create(email: 'user3@.test.test', password: 12345678, password_confirmation: 12345678)
 
 
+
 10.times do |n|
   Fridge.create(name: "test_fridge_#{n}")
 end

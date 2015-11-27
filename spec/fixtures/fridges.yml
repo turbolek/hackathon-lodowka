@@ -1,8 +1,12 @@
 fridge1:
   name: Moja lodówka
+  id: 1
 fridge2:
   name: Super lodówka
+  id: 2
 fridge3:
   name: El Passion lodówka srebrna
+  id: 3
 fridge4:
   name: El Passion lodówka mała
+  id: 4

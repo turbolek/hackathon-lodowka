@@ -1,3 +1,10 @@
 .container
   row
-    = render partial: "product", collection: @products
+    .panel.panel-default
+      .panel-heading.clearfix
+          h3.panel-title(style='float: left; line-height: 34px') Products
+          .btn-group.pull-right
+            a = link_to 'New product', new_product_path, class: 'btn btn-default'
+      .panel-body
+        = render partial: "product", collection: @products
+

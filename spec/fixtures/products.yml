@@ -1,0 +1,12 @@
+Kielbasa:
+  id: 1
+  name: Kielbasa
+  barcode: 123456789987654321
+Banan:
+  id: 2
+  name: Banan
+  barcode: 123456789123456789
+Woda_gazowana:
+  id: 3
+  name: Woda_gazowana
+  barcode: 987654321123456789

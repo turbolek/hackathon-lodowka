@@ -32,6 +32,25 @@ ActiveRecord::Schema.define(version: 20151127105807) do
   add_index "memberships", ["fridge_id"], name: "index_memberships_on_fridge_id", using: :btree
   add_index "memberships", ["user_id"], name: "index_memberships_on_user_id", using: :btree
 
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "barcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "supplies", force: :cascade do |t|
+    t.integer  "fridge_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
+    t.date     "expiration_date"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "supplies", ["fridge_id"], name: "index_supplies_on_fridge_id", using: :btree
+  add_index "supplies", ["product_id"], name: "index_supplies_on_product_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -70,4 +89,6 @@ ActiveRecord::Schema.define(version: 20151127105807) do
 
   add_foreign_key "memberships", "fridges"
   add_foreign_key "memberships", "users"
+  add_foreign_key "supplies", "fridges"
+  add_foreign_key "supplies", "products"
 end

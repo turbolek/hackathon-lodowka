@@ -1,7 +1,7 @@
 require 'rails_helper.rb'
 
 describe 'unauthenticate user'  do
-  fixtures :fridges
+  fixtures :fridges, :memberships, :users
 
   it 'see fridges list' do
 

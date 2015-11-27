@@ -1,4 +1,9 @@
-h4 = product.name
-
-- if user_signed_in?
-  =link_to 'Add to fridge', fridges_path(user: current_user, product_id: product.id), class: 'btn btn-success'
+p
+  ul.list-unstyled
+    li.list-group
+      .row
+        .col-xs-3
+          h4 = product.name
+        .col-xs-9
+          - if user_signed_in?
+            =link_to 'Add to fridge', fridges_path(user: current_user, product_id: product.id), class: 'btn btn-success'

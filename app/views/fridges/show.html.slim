@@ -12,11 +12,14 @@
                 - if @supplies.empty?
                   p.text-muted Empty list
                 - else
-                ul
+                ul.list-unstyled
                   - @supplies.each do |supply|
-                    li
-                      = supply.product.name
-                      = link_to 'Remove', supply_path(supply_id: supply.id, fridge_id: @fridge.id), method: :delete, class: 'btn btn-danger'
+                    li.list-group
+                      .row
+                        .col-xs-6
+                          = supply.product.name
+                        .col-xs-6
+                          = link_to 'Remove', supply_path(supply_id: supply.id, fridge_id: @fridge.id), method: :delete, class: 'btn btn-danger'
               - else
                 = link_to 'Join fridge', join_fridge_path(fridge_id: @fridge.id), method: :post, class: 'btn btn-primary'
             - else

@@ -30,7 +30,7 @@ describe 'add product to fridge' do
       visit '/fridges?product_id=1'
       first(:link, 'Choose fridge').click
 
-      expect(Supply.find(1).product_id).to eq(1)
+      expect(Supply.find(100).product_id).to eq(1)
 
     end
   end

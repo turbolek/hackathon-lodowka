@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#index'
 
+  post 'supplies/add_to_fridge', to: 'supplies#add_to_fridge'
+
 end

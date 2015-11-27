@@ -1,1 +1,4 @@
 h4 = fridge.name
+
+- if user_signed_in? && @given_product
+  =link_to 'Choose fridge', supplies_add_to_fridge_path(fridge_id: fridge.id, product_id: @given_product.id), method: :post, class: 'btn btn-success'

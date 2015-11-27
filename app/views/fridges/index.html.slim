@@ -1,3 +1,7 @@
 .container
   row
     = render partial: "fridge", collection: @fridges
+
+  row
+    - if user_signed_in?
+	    p = link_to 'New fridge', new_fridge_path, class: 'btn btn-default'

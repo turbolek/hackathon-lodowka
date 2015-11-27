@@ -12,7 +12,7 @@ describe 'add product to fridge' do
 
     first(:link, 'Add to fridge').click
 
-    expect(page).to have_current_path('/fridges?product_id=1')
+    expect(page).to have_current_path('/fridges?product_id=1&user=1')
   end
 
   it 'allows to choose a fridge' do

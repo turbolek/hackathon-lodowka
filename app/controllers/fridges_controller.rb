@@ -20,7 +20,8 @@ class FridgesController < ApplicationController
   end
 
   def index
-  	@fridges = Fridge.all
+    user = User.find_by(id: params[:user])
+  	@fridges = user.try(:fridges) || Fridge.all
     @given_product = Product.find(params[:product_id]) if params[:product_id]
 
   end
@@ -28,7 +29,7 @@ class FridgesController < ApplicationController
   def add_fridge
     @fridge = Fridge.find(params[:fridge_id])
     @fridge.users << current_user
-    redirect_to fridges_path
+    redirect_to fridges_path(user: current_user)
   end
 
   private

@@ -23,8 +23,8 @@ describe 'all users' do
     fixtures :users
 
     before(:each) do
-      user = users(:user1)
-      login_as user, scope: :user
+      @user = users(:user1)
+      login_as @user, scope: :user
     end
 
     it 'can visit new fridge page' do

@@ -1,3 +1,5 @@
 .container
   row
-	  h3 = @fridge.name
+    h3 = @fridge.name
+    - unless @fridge.users.find_by(id: current_user.id)
+      = link_to 'Join fridge', join_fridge_path(fridge_id: @fridge.id), method: :post, class: 'btn btn-primary'

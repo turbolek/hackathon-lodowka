@@ -1,1 +1,3 @@
 h4 = link_to fridge.name, fridge_path(fridge.id)
+- unless fridge.users.find_by(id: current_user.id)
+      = link_to 'Join fridge', join_fridge_path(fridge_id: fridge.id), method: :post, class: 'btn btn-primary'

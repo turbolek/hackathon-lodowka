@@ -16,7 +16,7 @@
                   - @supplies.each do |supply|
                     li
                       = supply.product.name
-                      = link_to 'Remove', remove_supply_path(supply_id: supply.id, fridge_id: @fridge.id), method: :post, class: 'btn btn-danger'
+                      = link_to 'Remove', supply_path(supply_id: supply.id, fridge_id: @fridge.id), method: :delete, class: 'btn btn-danger'
               - else
                 = link_to 'Join fridge', join_fridge_path(fridge_id: @fridge.id), method: :post, class: 'btn btn-primary'
             - else

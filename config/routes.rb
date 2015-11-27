@@ -10,6 +10,5 @@ Rails.application.routes.draw do
 
   post 'join_fridge', to: 'fridges#add_fridge'
   post 'supplies/add_to_fridge', to: 'supplies#add_to_fridge'
-  post 'remove_supply', to: 'supplies#remove_supply'
 
 end
